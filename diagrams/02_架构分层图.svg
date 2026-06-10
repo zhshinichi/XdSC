@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="760" viewBox="0 0 980 760" font-family="'Segoe UI','Microsoft YaHei',sans-serif">
+  <defs>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="980" height="760" fill="#ffffff"/>
+  <text x="36" y="44" font-size="24" font-weight="700" fill="#0f172a">高校抢课系统 · 整体分层架构</text>
+
+  <!-- Browser -->
+  <rect x="350" y="64" width="280" height="52" rx="10" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="490" y="96" font-size="15" font-weight="600" fill="#1e3a8a" text-anchor="middle">🌐 浏览器 · Vue3 + Vite (:5173)</text>
+
+  <!-- App container -->
+  <rect x="30" y="150" width="690" height="580" rx="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="48" y="178" font-size="16" font-weight="700" fill="#334155">Spring Boot 应用 (:8088) — 模块化单体</text>
+
+  <!-- Presentation layer -->
+  <rect x="48" y="192" width="654" height="96" rx="10" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="60" y="212" font-size="13" font-weight="600" fill="#1d4ed8">表现层 Presentation · REST Controller</text>
+  <g font-size="13" fill="#1e293b" text-anchor="middle">
+    <rect x="60" y="224" width="150" height="46" rx="8" fill="#fff" stroke="#93c5fd" filter="url(#sh)"/><text x="135" y="252">AuthController</text>
+    <rect x="222" y="224" width="150" height="46" rx="8" fill="#fff" stroke="#93c5fd" filter="url(#sh)"/><text x="297" y="252">CourseController</text>
+    <rect x="384" y="224" width="150" height="46" rx="8" fill="#fff" stroke="#93c5fd" filter="url(#sh)"/><text x="459" y="252">BatchController</text>
+    <rect x="546" y="224" width="146" height="46" rx="8" fill="#fff" stroke="#3b82f6" stroke-width="1.6" filter="url(#sh)"/><text x="619" y="252" font-weight="600">EnrollmentCtrl</text>
+  </g>
+
+  <!-- Application layer -->
+  <rect x="48" y="300" width="654" height="96" rx="10" fill="#f5f3ff" stroke="#ddd6fe"/>
+  <text x="60" y="320" font-size="13" font-weight="600" fill="#7c3aed">应用层 Application · 横切关注点</text>
+  <g font-size="12.5" fill="#1e293b" text-anchor="middle">
+    <rect x="60" y="332" width="150" height="46" rx="8" fill="#fff" stroke="#c4b5fd" filter="url(#sh)"/><text x="135" y="360">JwtAuthFilter</text>
+    <rect x="222" y="332" width="150" height="46" rx="8" fill="#fff" stroke="#c4b5fd" filter="url(#sh)"/><text x="297" y="360">Authz 权限校验</text>
+    <rect x="384" y="332" width="150" height="46" rx="8" fill="#fff" stroke="#c4b5fd" filter="url(#sh)"/><text x="459" y="360">RateLimiter 限流</text>
+    <rect x="546" y="332" width="146" height="46" rx="8" fill="#fff" stroke="#c4b5fd" filter="url(#sh)"/><text x="619" y="360">GlobalExHandler</text>
+  </g>
+
+  <!-- Domain layer -->
+  <rect x="48" y="408" width="654" height="300" rx="10" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="60" y="428" font-size="13" font-weight="600" fill="#059669">领域层 Domain · 模块</text>
+  <g font-size="13" fill="#1e293b" text-anchor="middle">
+    <rect x="60" y="440" width="200" height="52" rx="8" fill="#fff" stroke="#6ee7b7" filter="url(#sh)"/><text x="160" y="462" font-weight="600">user</text><text x="160" y="480" font-size="11" fill="#64748b">注册 / 登录 / JWT</text>
+    <rect x="276" y="440" width="200" height="52" rx="8" fill="#fff" stroke="#6ee7b7" filter="url(#sh)"/><text x="376" y="462" font-weight="600">course</text><text x="376" y="480" font-size="11" fill="#64748b">课程</text>
+    <rect x="492" y="440" width="200" height="52" rx="8" fill="#fff" stroke="#6ee7b7" filter="url(#sh)"/><text x="592" y="462" font-weight="600">batch</text><text x="592" y="480" font-size="11" fill="#64748b">抢课批次 / 时间窗口</text>
+  </g>
+  <!-- enrollment core -->
+  <rect x="60" y="508" width="632" height="184" rx="12" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#sh)"/>
+  <text x="376" y="534" font-size="15" font-weight="700" fill="#065f46" text-anchor="middle">enrollment · 核心抢课模块</text>
+  <g font-size="12.5" fill="#064e3b" text-anchor="middle">
+    <rect x="80" y="548" width="270" height="44" rx="8" fill="#fff" stroke="#34d399"/><text x="215" y="568" font-weight="600">EnrollmentService</text><text x="215" y="584" font-size="11" fill="#475569">抢课编排</text>
+    <rect x="366" y="548" width="306" height="44" rx="8" fill="#fff" stroke="#34d399"/><text x="519" y="568" font-weight="600">RedisStockService (Lua 原子防重+扣减)</text><text x="519" y="584" font-size="11" fill="#475569">不超卖核心</text>
+    <rect x="80" y="600" width="270" height="44" rx="8" fill="#fff" stroke="#34d399"/><text x="215" y="620" font-weight="600">EnrollmentPersister</text><text x="215" y="636" font-size="11" fill="#475569">Sync / Async 可插拔</text>
+    <rect x="366" y="600" width="306" height="44" rx="8" fill="#fff" stroke="#34d399"/><text x="519" y="620" font-weight="600">EnrollEventProducer / Consumer</text><text x="519" y="636" font-size="11" fill="#475569">Kafka 发送 / 幂等落库</text>
+    <rect x="80" y="652" width="592" height="32" rx="8" fill="#ecfdf5" stroke="#a7f3d0"/><text x="376" y="672" font-size="11.5" fill="#475569">common: security(JWT/Authz) · ratelimit(Lua) · error/web(统一异常)</text>
+  </g>
+
+  <!-- Infrastructure -->
+  <text x="850" y="178" font-size="16" font-weight="700" fill="#334155" text-anchor="middle">基础设施</text>
+  <!-- Redis -->
+  <g filter="url(#sh)">
+    <path d="M770,210 a90,14 0 0 1 180,0 v66 a90,14 0 0 1 -180,0 z" fill="#fef2f2" stroke="#ef4444"/>
+    <ellipse cx="860" cy="210" rx="90" ry="14" fill="#fff" stroke="#ef4444"/>
+  </g>
+  <text x="860" y="252" font-size="13" font-weight="700" fill="#b91c1c" text-anchor="middle">Redis</text>
+  <text x="860" y="270" font-size="10.5" fill="#7f1d1d" text-anchor="middle">库存/已选集合/限流</text>
+  <!-- MySQL -->
+  <g filter="url(#sh)">
+    <path d="M770,360 a90,14 0 0 1 180,0 v66 a90,14 0 0 1 -180,0 z" fill="#f0f9ff" stroke="#0ea5e9"/>
+    <ellipse cx="860" cy="360" rx="90" ry="14" fill="#fff" stroke="#0ea5e9"/>
+  </g>
+  <text x="860" y="402" font-size="13" font-weight="700" fill="#0369a1" text-anchor="middle">MySQL</text>
+  <text x="860" y="420" font-size="10.5" fill="#075985" text-anchor="middle">持久化</text>
+  <!-- Kafka -->
+  <rect x="770" y="510" width="180" height="80" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="860" y="546" font-size="13" font-weight="700" fill="#b45309" text-anchor="middle">Kafka</text>
+  <text x="860" y="566" font-size="10.5" fill="#92400e" text-anchor="middle">topic: enroll-events</text>
+
+  <!-- arrows -->
+  <g stroke="#64748b" stroke-width="1.6" fill="none">
+    <line x1="490" y1="116" x2="490" y2="190" marker-end="url(#arr)"/>
+    <line x1="375" y1="288" x2="375" y2="298" marker-end="url(#arr)"/>
+    <line x1="375" y1="396" x2="375" y2="406" marker-end="url(#arr)"/>
+    <!-- enrollment -> redis -->
+    <path d="M692,560 C740,520 760,300 768,268" marker-end="url(#arr)"/>
+    <!-- ratelimit -> redis -->
+    <path d="M459,332 C620,300 700,270 768,250" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+    <!-- domain -> mysql (JPA) -->
+    <path d="M692,470 C730,440 750,410 768,400" marker-end="url(#arr)"/>
+    <!-- enrollment -> kafka -->
+    <path d="M692,622 C730,600 750,575 768,560" marker-end="url(#arr)"/>
+    <!-- kafka -> mysql async -->
+    <path d="M860,510 C860,470 860,452 860,440" marker-end="url(#arr)"/>
+  </g>
+  <g font-size="11" fill="#475569">
+    <text x="500" y="150">REST / JSON · /api</text>
+    <text x="612" y="300">Lua 原子扣减</text>
+    <text x="556" y="286" fill="#7c3aed">限流计数</text>
+    <text x="700" y="452">JPA</text>
+    <text x="700" y="600">发事件</text>
+    <text x="868" y="478">异步落库</text>
+  </g>
+</svg>

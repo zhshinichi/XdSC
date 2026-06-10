@@ -1,0 +1,12 @@
+{
+  "label": "async-优化前",
+  "n": 2000,
+  "capacity": 2000,
+  "wall_ms": 10140,
+  "throughput_rps": 197,
+  "outcomes": { "ok": 2000, "soldOut": 0, "limited": 0, "other": 0 },
+  "latency_all": { "count": 2000, "min": 0, "avg": 5400, "p50": 5554, "p90": 9000, "p95": 9827, "p99": 9980, "max": 10000 },
+  "latency_winners": { "count": 2000, "min": 0, "avg": 5400, "p50": 5554, "p90": 9000, "p95": 9827, "p99": 9980, "max": 10000 },
+  "oversell": { "capacity": 2000, "finalEnrolled": 2000, "redisWinners": 2000, "oversold": false },
+  "note": "优化前：全员落库场景，2 次 DB 读/请求 + 消费者写库争抢同一连接池，吞吐被压到 197 req/s"
+}

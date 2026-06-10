@@ -1,0 +1,91 @@
+{
+  "label": "sync",
+  "n": 2000,
+  "capacity": 100,
+  "wall_ms": 2183,
+  "throughput_rps": 916,
+  "outcomes": {
+    "ok": 100,
+    "soldOut": 1900,
+    "limited": 0,
+    "other": 0
+  },
+  "latency_all": {
+    "count": 2000,
+    "min": 580,
+    "avg": 1469,
+    "p50": 1491,
+    "p90": 1920,
+    "p95": 1988,
+    "p99": 2043,
+    "max": 2053
+  },
+  "latency_winners": {
+    "count": 100,
+    "min": 580,
+    "avg": 703,
+    "p50": 593,
+    "p90": 903,
+    "p95": 906,
+    "p99": 906,
+    "max": 906
+  },
+  "latency_losers": {
+    "count": 1900,
+    "min": 953,
+    "avg": 1510,
+    "p50": 1493,
+    "p90": 1927,
+    "p95": 1992,
+    "p99": 2044,
+    "max": 2053
+  },
+  "histogram_all": [
+    {
+      "label": "0-10",
+      "count": 0
+    },
+    {
+      "label": "10-25",
+      "count": 0
+    },
+    {
+      "label": "25-50",
+      "count": 0
+    },
+    {
+      "label": "50-100",
+      "count": 0
+    },
+    {
+      "label": "100-250",
+      "count": 0
+    },
+    {
+      "label": "250-500",
+      "count": 0
+    },
+    {
+      "label": "500-1k",
+      "count": 148
+    },
+    {
+      "label": "1k-2k",
+      "count": 1769
+    },
+    {
+      "label": "2k-5k",
+      "count": 83
+    },
+    {
+      "label": "5k+",
+      "count": 0
+    }
+  ],
+  "oversell": {
+    "capacity": 100,
+    "finalEnrolled": 100,
+    "redisWinners": 100,
+    "oversold": false
+  }
+}

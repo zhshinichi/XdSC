@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "async",
+    "n": 200,
+    "capacity": 50,
+    "wall_ms": 561,
+    "throughput_rps": 357,
+    "avg": 324,
+    "p50": 324,
+    "p90": 499,
+    "p95": 516,
+    "p99": 528,
+    "max": 529,
+    "ok": 50,
+    "soldOut": 150,
+    "limited": 0,
+    "other": 0,
+    "finalEnrolled": 50,
+    "oversold": false,
+    "errRate": 0
+  }
+]

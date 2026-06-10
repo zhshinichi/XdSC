@@ -1,0 +1,12 @@
+{
+  "label": "async-优化前",
+  "n": 2000,
+  "capacity": 100,
+  "wall_ms": 2725,
+  "throughput_rps": 734,
+  "outcomes": { "ok": 100, "soldOut": 1900, "limited": 0, "other": 0 },
+  "latency_all": { "count": 2000, "min": 0, "avg": 1900, "p50": 2043, "p90": 2400, "p95": 2557, "p99": 2600, "max": 2610 },
+  "latency_winners": { "count": 100, "min": 0, "avg": 450, "p50": 461, "p90": 780, "p95": 803, "p99": 805, "max": 805 },
+  "oversell": { "capacity": 100, "finalEnrolled": 100, "redisWinners": 100, "oversold": false },
+  "note": "优化前：抢课热路径每请求 2 次 DB 读(查课程+查批次)，被 Hikari 池(10)串行化"
+}

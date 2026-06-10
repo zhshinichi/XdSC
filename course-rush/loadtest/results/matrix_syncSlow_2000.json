@@ -1,0 +1,20 @@
+[
+  {
+    "mode": "syncSlow",
+    "n": 2000,
+    "capacity": 2000,
+    "throughput_rps": 551,
+    "avg": 1854,
+    "p50": 1833,
+    "p90": 3214,
+    "p95": 3394,
+    "p99": 3521,
+    "max": 3554,
+    "ok": 1999,
+    "soldOut": 1,
+    "limited": 0,
+    "other": 0,
+    "finalEnrolled": 2000,
+    "oversold": false
+  }
+]

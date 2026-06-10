@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="950" viewBox="0 0 1080 950" font-family="'Segoe UI','Microsoft YaHei',sans-serif">
+  <defs>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="950" fill="#ffffff"/>
+  <text x="36" y="36" font-size="23" font-weight="700" fill="#0f172a">ATAM 效用树 · Utility Tree</text>
+  <!-- legend -->
+  <g font-size="11" fill="#475569">
+    <text x="430" y="30">标注 (重要度, 实现难度)：H 高 / M 中 / L 低</text>
+    <rect x="700" y="20" width="14" height="14" rx="3" fill="#fee2e2" stroke="#ef4444"/><text x="720" y="31">★ (H,H) 架构驱动点</text>
+    <rect x="850" y="20" width="14" height="14" rx="3" fill="#fef3c7" stroke="#f59e0b"/><text x="870" y="31">关注点</text>
+    <rect x="950" y="20" width="14" height="14" rx="3" fill="#e0e7ff" stroke="#6366f1"/><text x="970" y="31">一般</text>
+  </g>
+
+  <!-- connector lines: root -> QA -->
+  <g stroke="#cbd5e1" stroke-width="1.4" fill="none">
+    <path d="M170,491 C200,491 200,139 230,139"/>
+    <path d="M170,491 C200,491 200,299 230,299"/>
+    <path d="M170,491 C200,491 200,459 230,459"/>
+    <path d="M170,491 C200,491 200,619 230,619"/>
+    <path d="M170,491 C200,491 200,779 230,779"/>
+    <path d="M170,491 C200,491 200,875 230,875"/>
+  </g>
+  <!-- QA -> leaves -->
+  <g stroke="#cbd5e1" stroke-width="1.2" fill="none">
+    <!-- 性能 139 -> 107,171 -->
+    <path d="M380,139 C430,139 430,107 470,107"/><path d="M380,139 C430,139 430,171 470,171"/>
+    <!-- 正确性 299 -> 235,299,363 -->
+    <path d="M380,299 C430,299 430,235 470,235"/><path d="M380,299 C430,299 430,299 470,299"/><path d="M380,299 C430,299 430,363 470,363"/>
+    <!-- 可用性 459 -> 427,491 -->
+    <path d="M380,459 C430,459 430,427 470,427"/><path d="M380,459 C430,459 430,491 470,491"/>
+    <!-- 安全 619 -> 555,619,683 -->
+    <path d="M380,619 C430,619 430,555 470,555"/><path d="M380,619 C430,619 430,619 470,619"/><path d="M380,619 C430,619 430,683 470,683"/>
+    <!-- 可修改 779 -> 747,811 -->
+    <path d="M380,779 C430,779 430,747 470,747"/><path d="M380,779 C430,779 430,811 470,811"/>
+    <!-- 可测试 875 -> 875 -->
+    <path d="M380,875 C430,875 430,875 470,875"/>
+  </g>
+
+  <!-- root -->
+  <rect x="40" y="451" width="130" height="80" rx="12" fill="#0f172a" filter="url(#sh)"/>
+  <text x="105" y="486" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">系统效用</text>
+  <text x="105" y="508" font-size="12" fill="#cbd5e1" text-anchor="middle">Utility</text>
+
+  <!-- QA nodes -->
+  <g font-size="13.5" font-weight="700" text-anchor="middle">
+    <rect x="230" y="112" width="150" height="54" rx="9" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5" filter="url(#sh)"/><text x="305" y="138" fill="#1d4ed8">性能</text><text x="305" y="156" font-size="10.5" font-weight="400" fill="#64748b">Performance</text>
+    <rect x="230" y="262" width="150" height="74" rx="9" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5" filter="url(#sh)"/><text x="305" y="296" fill="#059669">正确性</text><text x="305" y="314" font-size="10.5" font-weight="400" fill="#64748b">Correctness</text>
+    <rect x="230" y="432" width="150" height="54" rx="9" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="1.5" filter="url(#sh)"/><text x="305" y="458" fill="#0369a1">可用性</text><text x="305" y="476" font-size="10.5" font-weight="400" fill="#64748b">Availability</text>
+    <rect x="230" y="592" width="150" height="54" rx="9" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5" filter="url(#sh)"/><text x="305" y="618" fill="#7c3aed">安全性</text><text x="305" y="636" font-size="10.5" font-weight="400" fill="#64748b">Security</text>
+    <rect x="230" y="752" width="150" height="54" rx="9" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" filter="url(#sh)"/><text x="305" y="778" fill="#b45309">可修改性</text><text x="305" y="796" font-size="10.5" font-weight="400" fill="#64748b">Modifiability</text>
+    <rect x="230" y="848" width="150" height="54" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5" filter="url(#sh)"/><text x="305" y="874" fill="#334155">可测试性</text><text x="305" y="892" font-size="10.5" font-weight="400" fill="#64748b">Testability</text>
+  </g>
+
+  <!-- leaves: x=470 w=560 h=54 -->
+  <g font-size="12.5">
+    <!-- helper styles inline per leaf -->
+    <!-- 1 抢课响应 (H,H) -->
+    <rect x="470" y="80" width="560" height="54" rx="8" fill="#fff" stroke="#ef4444" stroke-width="2"/>
+    <text x="486" y="102" font-weight="700" fill="#0f172a">★ 抢课响应延迟</text>
+    <text x="486" y="122" font-size="11" fill="#475569">高峰并发下 95% 选课请求 &lt; 1s，系统不崩溃 (QAS-1)</text>
+    <rect x="946" y="95" width="72" height="24" rx="12" fill="#fee2e2" stroke="#ef4444"/><text x="982" y="111" text-anchor="middle" font-weight="700" fill="#b91c1c">(H, H)</text>
+    <!-- 2 削峰吞吐 (H,M) -->
+    <rect x="470" y="144" width="560" height="54" rx="8" fill="#fff" stroke="#bfdbfe"/>
+    <text x="486" y="166" font-weight="600" fill="#0f172a">削峰吞吐</text>
+    <text x="486" y="186" font-size="11" fill="#475569">Kafka 异步落库把瞬时写峰值平滑为稳定吞吐</text>
+    <rect x="946" y="159" width="72" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b"/><text x="982" y="175" text-anchor="middle" font-weight="700" fill="#92400e">(H, M)</text>
+    <!-- 3 不超卖 (H,H) star -->
+    <rect x="470" y="208" width="560" height="54" rx="8" fill="#fff" stroke="#ef4444" stroke-width="2"/>
+    <text x="486" y="230" font-weight="700" fill="#0f172a">★ 不超卖（核心不变量）</text>
+    <text x="486" y="250" font-size="11" fill="#475569">任意并发下，某课程选课数 ≤ 容量 (QAS-2)</text>
+    <rect x="946" y="223" width="72" height="24" rx="12" fill="#fee2e2" stroke="#ef4444"/><text x="982" y="239" text-anchor="middle" font-weight="700" fill="#b91c1c">(H, H)</text>
+    <!-- 4 防重复 (H,M) -->
+    <rect x="470" y="272" width="560" height="54" rx="8" fill="#fff" stroke="#a7f3d0"/>
+    <text x="486" y="294" font-weight="600" fill="#0f172a">防重复选课</text>
+    <text x="486" y="314" font-size="11" fill="#475569">同一学生对同一课程不重复（Lua + 唯一索引双保险）</text>
+    <rect x="946" y="287" width="72" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b"/><text x="982" y="303" text-anchor="middle" font-weight="700" fill="#92400e">(H, M)</text>
+    <!-- 5 幂等落库 (M,M) -->
+    <rect x="470" y="336" width="560" height="54" rx="8" fill="#fff" stroke="#a7f3d0"/>
+    <text x="486" y="358" font-weight="600" fill="#0f172a">幂等落库</text>
+    <text x="486" y="378" font-size="11" fill="#475569">Kafka 重复投递的事件只落一条记录 (QAS-6)</text>
+    <rect x="946" y="351" width="72" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b"/><text x="982" y="367" text-anchor="middle" font-weight="700" fill="#92400e">(M, M)</text>
+    <!-- 6 依赖降级 (M,M) -->
+    <rect x="470" y="400" width="560" height="54" rx="8" fill="#fff" stroke="#bae6fd"/>
+    <text x="486" y="422" font-weight="600" fill="#0f172a">依赖降级</text>
+    <text x="486" y="442" font-size="11" fill="#475569">Kafka/Redis 不可用时切同步写库/DB 乐观锁 (QAS-3)</text>
+    <rect x="946" y="415" width="72" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b"/><text x="982" y="431" text-anchor="middle" font-weight="700" fill="#92400e">(M, M)</text>
+    <!-- 7 不整体宕机 (M,M) -->
+    <rect x="470" y="464" width="560" height="54" rx="8" fill="#fff" stroke="#bae6fd"/>
+    <text x="486" y="486" font-weight="600" fill="#0f172a">服务不整体宕机</text>
+    <text x="486" y="506" font-size="11" fill="#475569">单一依赖抖动表现为局部失败，核心链路可恢复</text>
+    <rect x="946" y="479" width="72" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b"/><text x="982" y="495" text-anchor="middle" font-weight="700" fill="#92400e">(M, M)</text>
+    <!-- 8 身份认证 (H,L) -->
+    <rect x="470" y="528" width="560" height="54" rx="8" fill="#fff" stroke="#ddd6fe"/>
+    <text x="486" y="550" font-weight="600" fill="#0f172a">身份认证</text>
+    <text x="486" y="570" font-size="11" fill="#475569">JWT 校验，未登录/令牌无效返回 401</text>
+    <rect x="946" y="543" width="72" height="24" rx="12" fill="#e0e7ff" stroke="#6366f1"/><text x="982" y="559" text-anchor="middle" font-weight="700" fill="#3730a3">(H, L)</text>
+    <!-- 9 越权防护 (M,L) -->
+    <rect x="470" y="592" width="560" height="54" rx="8" fill="#fff" stroke="#ddd6fe"/>
+    <text x="486" y="614" font-weight="600" fill="#0f172a">越权防护</text>
+    <text x="486" y="634" font-size="11" fill="#475569">学生仅操作本人选课；管理员接口需 ADMIN 角色</text>
+    <rect x="946" y="607" width="72" height="24" rx="12" fill="#e0e7ff" stroke="#6366f1"/><text x="982" y="623" text-anchor="middle" font-weight="700" fill="#3730a3">(M, L)</text>
+    <!-- 10 防刷限流 (M,L) -->
+    <rect x="470" y="656" width="560" height="54" rx="8" fill="#fff" stroke="#ddd6fe"/>
+    <text x="486" y="678" font-weight="600" fill="#0f172a">防刷限流</text>
+    <text x="486" y="698" font-size="11" fill="#475569">高频刷接口超阈值返回 429，保护后端 (QAS-4)</text>
+    <rect x="946" y="671" width="72" height="24" rx="12" fill="#e0e7ff" stroke="#6366f1"/><text x="982" y="687" text-anchor="middle" font-weight="700" fill="#3730a3">(M, L)</text>
+    <!-- 11 落库策略可插拔 (M,L) -->
+    <rect x="470" y="720" width="560" height="54" rx="8" fill="#fff" stroke="#fde68a"/>
+    <text x="486" y="742" font-weight="600" fill="#0f172a">落库策略可插拔</text>
+    <text x="486" y="762" font-size="11" fill="#475569">sync/async 配置切换，调用方零改动 (QAS-5)</text>
+    <rect x="946" y="735" width="72" height="24" rx="12" fill="#e0e7ff" stroke="#6366f1"/><text x="982" y="751" text-anchor="middle" font-weight="700" fill="#3730a3">(M, L)</text>
+    <!-- 12 库存策略可替换 (L,M) -->
+    <rect x="470" y="784" width="560" height="54" rx="8" fill="#fff" stroke="#fde68a"/>
+    <text x="486" y="806" font-weight="600" fill="#0f172a">库存策略可替换</text>
+    <text x="486" y="826" font-size="11" fill="#475569">Redis 原子 ↔ DB 乐观锁（接口已留，第二实现为设计）</text>
+    <rect x="946" y="799" width="72" height="24" rx="12" fill="#e0e7ff" stroke="#6366f1"/><text x="982" y="815" text-anchor="middle" font-weight="700" fill="#3730a3">(L, M)</text>
+    <!-- 13 可测试 (M,L) -->
+    <rect x="470" y="848" width="560" height="54" rx="8" fill="#fff" stroke="#cbd5e1"/>
+    <text x="486" y="870" font-weight="600" fill="#0f172a">核心可自动化验证</text>
+    <text x="486" y="890" font-size="11" fill="#475569">不超卖/限流/幂等均有自动化测试（53 个）</text>
+    <rect x="946" y="863" width="72" height="24" rx="12" fill="#e0e7ff" stroke="#6366f1"/><text x="982" y="879" text-anchor="middle" font-weight="700" fill="#3730a3">(M, L)</text>
+  </g>
+</svg>

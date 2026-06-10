@@ -1,0 +1,91 @@
+{
+  "label": "sync",
+  "n": 2000,
+  "capacity": 2000,
+  "wall_ms": 4026,
+  "throughput_rps": 497,
+  "outcomes": {
+    "ok": 2000,
+    "soldOut": 0,
+    "limited": 0,
+    "other": 0
+  },
+  "latency_all": {
+    "count": 2000,
+    "min": 436,
+    "avg": 2550,
+    "p50": 2680,
+    "p90": 3593,
+    "p95": 3703,
+    "p99": 3798,
+    "max": 3813
+  },
+  "latency_winners": {
+    "count": 2000,
+    "min": 436,
+    "avg": 2550,
+    "p50": 2680,
+    "p90": 3593,
+    "p95": 3703,
+    "p99": 3798,
+    "max": 3813
+  },
+  "latency_losers": {
+    "count": 0,
+    "min": 0,
+    "avg": 0,
+    "p50": 0,
+    "p90": 0,
+    "p95": 0,
+    "p99": 0,
+    "max": 0
+  },
+  "histogram_all": [
+    {
+      "label": "0-10",
+      "count": 0
+    },
+    {
+      "label": "10-25",
+      "count": 0
+    },
+    {
+      "label": "25-50",
+      "count": 0
+    },
+    {
+      "label": "50-100",
+      "count": 0
+    },
+    {
+      "label": "100-250",
+      "count": 0
+    },
+    {
+      "label": "250-500",
+      "count": 61
+    },
+    {
+      "label": "500-1k",
+      "count": 53
+    },
+    {
+      "label": "1k-2k",
+      "count": 386
+    },
+    {
+      "label": "2k-5k",
+      "count": 1500
+    },
+    {
+      "label": "5k+",
+      "count": 0
+    }
+  ],
+  "oversell": {
+    "capacity": 2000,
+    "finalEnrolled": 2000,
+    "redisWinners": 2000,
+    "oversold": false
+  }
+}

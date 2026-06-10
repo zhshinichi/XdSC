@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "sync",
+    "n": 2000,
+    "capacity": 2000,
+    "throughput_rps": 584,
+    "avg": 1761,
+    "p50": 1726,
+    "p90": 3050,
+    "p95": 3202,
+    "p99": 3320,
+    "max": 3338,
+    "ok": 2000,
+    "soldOut": 0,
+    "limited": 0,
+    "other": 0,
+    "finalEnrolled": 2000,
+    "oversold": false
+  },
+  {
+    "mode": "sync",
+    "n": 3000,
+    "capacity": 2000,
+    "throughput_rps": 433,
+    "avg": 3597,
+    "p50": 3815,
+    "p90": 6304,
+    "p95": 6561,
+    "p99": 6755,
+    "max": 6790,
+    "ok": 2000,
+    "soldOut": 1000,
+    "limited": 0,
+    "other": 0,
+    "finalEnrolled": 2000,
+    "oversold": false
+  }
+]

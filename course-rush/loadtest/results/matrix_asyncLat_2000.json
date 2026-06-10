@@ -1,0 +1,20 @@
+[
+  {
+    "mode": "asyncLat",
+    "n": 2000,
+    "capacity": 2000,
+    "throughput_rps": 1054,
+    "avg": 1011,
+    "p50": 1006,
+    "p90": 1657,
+    "p95": 1739,
+    "p99": 1802,
+    "max": 1812,
+    "ok": 1999,
+    "soldOut": 1,
+    "limited": 0,
+    "other": 0,
+    "finalEnrolled": 0,
+    "oversold": false
+  }
+]
